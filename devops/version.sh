@@ -12,9 +12,9 @@ echo "Old version: $LATEST_TAG"
 VERSION_NUMBERS=${LATEST_TAG#v}
 IFS='.' read -r major minor patch <<< "$VERSION_NUMBERS"
 
-NEW_PATCH=$(patch)
-NEW_MINOR=$(patch)
-NEW_MAJOR=$(patch)
+NEW_PATCH="$patch"
+NEW_MINOR="$minor"
+NEW_MAJOR="$major"
 
 case "$RELEASE_TYPE" in
     "patch")
