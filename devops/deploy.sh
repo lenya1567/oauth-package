@@ -3,5 +3,5 @@ git config --local user.name "github-actions[bot]"
 
 RELEASE_DATE=$(date +"%Y-%m-%d %H:%M:%S")
 
-git tag -a "${{ env.NEW_RELEASE_TAG }}" -m "Release ${{ $NEW_RELEASE_TAG }} ($RELEASE_DATE)"
+git tag -a "$NEW_RELEASE_TAG" -m "Release $NEW_RELEASE_TAG ($RELEASE_DATE)"
 
