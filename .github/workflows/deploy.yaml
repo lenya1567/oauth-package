@@ -1,0 +1,38 @@
+name: Публикация пакета
+
+on:
+  workflow_dispatch:
+    inputs:
+      release_type:
+        description: 'Type of release'
+        required: true
+        default: 'minor'
+        type: choice
+        options:
+          - patch
+          - minor
+          - major
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Выгрузка кода репозитория
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Расчёт новой версии
+        run: |
+          chmod +x ./devops/version.sh
+          bash ./devops/version.sh
+        env:
+          RELEASE_TYPE: ${{ inputs.release_type }}
+
+      - name: Публикация новой версии
+        run: |
+          chmod +x ./devops/version.sh
+          bash ./devops/version.sh
+        env:
+          NEW_RELEASE_TAG: ${{ env.NEW_RELEASE_TAG }}
+          
