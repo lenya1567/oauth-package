@@ -20,10 +20,10 @@ case "$RELEASE_TYPE" in
     "patch")
         NEW_PATCH=$((patch + 1))
         ;;
-    "staging")
+    "minor")
         NEW_MINOR=$((minor + 1))
         ;;
-    "production")
+    "major")
         NEW_MAJOR=$((major + 1))
         ;;
     *)
