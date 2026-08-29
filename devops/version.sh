@@ -6,7 +6,7 @@ if [ -z "$LATEST_TAG" ]; then
     LATEST_TAG="v0.0.0"
 fi
 
-echo "Release type: $DEPLOY_TYPE"
+echo "Release type: $RELEASE_TYPE"
 echo "Old version: $LATEST_TAG"
 
 VERSION_NUMBERS=${LATEST_TAG#v}
