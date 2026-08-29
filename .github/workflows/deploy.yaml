@@ -31,8 +31,8 @@ jobs:
 
       - name: Публикация новой версии
         run: |
-          chmod +x ./devops/version.sh
-          bash ./devops/version.sh
+          chmod +x ./devops/deploy.sh
+          bash ./devops/deploy.sh
         env:
           NEW_RELEASE_TAG: ${{ env.NEW_RELEASE_TAG }}
           
