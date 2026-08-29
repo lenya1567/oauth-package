@@ -22,9 +22,12 @@ case "$RELEASE_TYPE" in
         ;;
     "minor")
         NEW_MINOR=$((minor + 1))
+        patch="0"
         ;;
     "major")
         NEW_MAJOR=$((major + 1))
+        minor="0"
+        patch="0"
         ;;
     *)
         echo "Unknown release type"
