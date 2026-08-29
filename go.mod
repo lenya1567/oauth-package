@@ -1,4 +1,4 @@
-module github.com/lenya1567/studtrain-oauth-package
+module github.com/lenya1567/oauth-package
 
 go 1.26.1
 
