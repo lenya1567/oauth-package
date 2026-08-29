@@ -35,4 +35,6 @@ jobs:
           bash ./devops/deploy.sh
         env:
           NEW_RELEASE_TAG: ${{ env.NEW_RELEASE_TAG }}
+          OLD_RELEASE_TAG: ${{ env.OLD_RELEASE_TAG }}
+          RELEASE_TYPE: ${{ inputs.release_type }}
           
