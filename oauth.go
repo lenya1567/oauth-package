@@ -109,7 +109,7 @@ func (serv *StudtrainOAuth) OAuthCallbackHandler() http.HandlerFunc {
 		}
 
 		refreshCookie := fmt.Sprintf("refresh_token=%s; Path=/; HttpOnly; SameSite=Lax; Max-Age=2592000", tokens.RefreshToken)
-		accessCookie := fmt.Sprintf("access_token=%s; Path=/api/v1/oauth; HttpOnly; SameSite=Lax; Max-Age=600", tokens.AccessToken)
+		accessCookie := fmt.Sprintf("access_token=%s; Path=/api/v1/oauth; HttpOnly; SameSite=Lax; Max-Age=600000", tokens.AccessToken)
 
 		w.Header().Add("Set-Cookie", refreshCookie)
 		w.Header().Add("Set-Cookie", accessCookie)
